@@ -1,0 +1,44 @@
+<!-- <p>
+  login works!
+</p> -->
+<!-- 页头 -->
+<ion-header>
+  <ion-toolbar>
+    <ion-title slot="start" color="dark">
+      个人中心
+    </ion-title>
+    <ion-avatar slot="end">
+      <img src="../../assets/img/Kirigiri.jpg">
+    </ion-avatar>
+    <!-- <ion-searchbar slot="end"></ion-searchbar> -->
+  </ion-toolbar>
+</ion-header>
+<!-- 内容 -->
+<ion-content>
+  <ion-card>
+    <img src="../../assets/img/Kirigiri.jpg" class="myPic">
+    <!-- 未登录时 -->
+    <div *ngIf="toLog">
+      <ion-item>
+        <ion-label position="stacked">用户</ion-label>
+        <ion-input [(ngModel)]="uname" (ngModelChange)="check1()" placeholder="输入用户名" autofocus="true"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">密码</ion-label>
+        <ion-input [(ngModel)]="upwd" (ngModelChange)="check2()" placeholder="请输入密码" type="password"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-button expand="block" size="large" class="myBTN" color="light" (click)="log()" [disabled]="disa">登录
+        </ion-button>
+      </ion-item>
+    </div>
+    <!-- 登录时 -->
+    <div *ngIf="!toLog" class="myDIV">
+      <ion-card-title>hello, {{uname}}</ion-card-title>
+      <ion-card-subtitle class="myWrds">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, dolorem!</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae velit maxime reiciendis aperiam aspernatur repellat.</p>
+      </ion-card-subtitle>
+    </div>
+  </ion-card>
+</ion-content>

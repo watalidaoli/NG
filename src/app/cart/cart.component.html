@@ -1,0 +1,56 @@
+<!-- <p>
+  cart works!
+</p> -->
+<!--  -->
+<ion-header>
+  <ion-toolbar slot="start">
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <!-- <ion-searchbar slot="end"></ion-searchbar> -->
+  </ion-toolbar>
+</ion-header>
+<!-- 内容 -->
+<ion-content>
+  <!-- card -->
+  <ion-card *ngFor="let movie of movieItem;index as i;">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <div><img [src]="'https://triangle.applinzi.com/'+movie.mimg_url" class="myPic"></div>
+        </ion-col>
+        <ion-col>
+          <div class="info">
+            <h4 class="myTitle">{{movie.mtitle}}</h4>
+            <p class="myP">{{movie.msubtitle}}</p>
+            <ion-text color="warning">{{movie.mrank|number:'1.1-1'}}</ion-text>
+            <p class="myP">{{movie.mdirector}}</p>
+            <p class="myP">{{movie.mprice|currency:'¥'}}</p>
+            <p class="myP">{{movie.mmsg}}</p>
+            <p class="myP">{{movie.mdate}}</p>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-label>
+            <p class="myP">{{movie.mperformer|slice:0:25}}...</p>
+            <p class="myD">{{movie.mdetails|slice:0:100}}...</p>
+          </ion-label>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+  <!-- list -->
+  <ion-list>
+    <ion-item *ngFor="let c of cinemas;index as i;">
+      <ion-label>
+        <h5>{{c.cname}}</h5>
+        <p>{{c.caddress}}</p>
+        <p>{{c.cphone}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
