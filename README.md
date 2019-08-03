@@ -8,7 +8,5 @@ NGMOVIE
   
   展示热门电影推荐 列表和详情等
   
-  暂只实现电影展示相关功能模块
-  
 部署地址 http://ngmovie.applinzi.com/my/
 
